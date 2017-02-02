@@ -16,11 +16,12 @@ CPUs, as well as raw interfaces to platform-specific instructions.
 """
 
 [dependencies]
-serde = { version = "0.4", optional = true }
-serde_macros = { version = "0.4", optional = true }
+serde = { version = "0.9", optional = true }
+serde_derive = { version = "0.9", optional = true }
 
 [dev-dependencies]
 cfg-if = "0.1"
 
 [features]
 doc = []
+with-serde = ["serde", "serde_derive"]
