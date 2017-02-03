@@ -15,8 +15,8 @@ CPUs, as well as raw interfaces to platform-specific instructions.
 """
 
 [dependencies]
-serde = { version = "0.9", optional = true }
-serde_derive = { version = "0.9", optional = true }
+serde = { version = "0.8", optional = true }
+serde_derive = { version = "0.8", optional = true }
 
 [dev-dependencies]
 cfg-if = "0.1"
