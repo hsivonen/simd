@@ -1,17 +1,4 @@
 //! `simd` offers a basic interface to the SIMD functionality of CPUs.
-//!
-//! **Warning** This is an actively developed work-in-progress, and
-//! may/will break from commit to commit.
-//!
-//! # Installation
-//!
-//! Via git:
-//!
-//! ```toml
-//! simd = { git = "https://github.com/huonw/simd" }
-//! ```
-//!
-//! This is **not** currently the `simd` crate on crates.io.
 
 #![feature(cfg_target_feature, repr_simd, platform_intrinsics, const_fn)]
 #![allow(non_camel_case_types)]
