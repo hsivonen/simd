@@ -329,6 +329,19 @@ impl i32x8 {
     }
 }
 
+impl f32x8 {
+    /// Convert each lane to a signed integer.
+    #[inline]
+    pub fn to_i32(self) -> i32x8 {
+        unsafe {simd_cast(self)}
+    }
+    /// Convert each lane to an unsigned integer.
+    #[inline]
+    pub fn to_u32(self) -> u32x8 {
+        unsafe {simd_cast(self)}
+    }
+}
+
 impl i16x16 {
     /// Convert each lane to an unsigned integer.
     #[inline]
