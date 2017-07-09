@@ -1,4 +1,5 @@
 //! `simd` offers a basic interface to the SIMD functionality of CPUs.
+#![no_std]
 
 #![feature(cfg_target_feature, repr_simd, platform_intrinsics, const_fn)]
 #![allow(non_camel_case_types)]
@@ -9,7 +10,7 @@ extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 
-use std::mem;
+use core::mem;
 
 /// Boolean type for 8-bit integers.
 #[cfg_attr(feature = "with-serde", derive(Serialize, Deserialize))]
