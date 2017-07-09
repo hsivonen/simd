@@ -9,6 +9,8 @@ extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 
+use std::mem;
+
 /// Boolean type for 8-bit integers.
 #[cfg_attr(feature = "with-serde", derive(Serialize, Deserialize))]
 #[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
@@ -172,9 +174,9 @@ simd! {
 #[allow(dead_code)]
 #[inline]
 fn bitcast<T: Simd, U: Simd>(x: T) -> U {
-    assert_eq!(std::mem::size_of::<T>(),
-               std::mem::size_of::<U>());
-    unsafe {std::mem::transmute_copy(&x)}
+    assert_eq!(mem::size_of::<T>(),
+               mem::size_of::<U>());
+    unsafe {mem::transmute_copy(&x)}
 }
 
 #[allow(dead_code)]
