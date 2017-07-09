@@ -1,6 +1,5 @@
 #![allow(dead_code)]
-use std::ops;
-use std::mem;
+use core::{mem,ops};
 #[allow(unused_imports)]
 use super::{
 	Simd,
