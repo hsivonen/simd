@@ -63,3 +63,28 @@ extern "platform-intrinsic" {
 //         unsafe { x86_mm256_permutevar8x32_ps(self, other) }
 //     }
 // }
+
+pub trait Avx2U8x32 {
+    fn avg(self, other: u8x32) -> u8x32;
+
+    fn sad(self, other: Self) -> u64x4;
+
+    fn shuffle_bytes(self, other: Self) -> u8x32;
+}
+
+impl Avx2U8x32 for u8x32 {
+    #[inline]
+    fn avg(self, other: u8x32) -> u8x32 {
+        unsafe { x86_mm256_avg_epu8(self, other) }
+    }
+
+    #[inline]
+    fn sad(self, other: Self) -> u64x4 {
+        unsafe { x86_mm256_sad_epu8(self, other) }
+    }
+
+    #[inline]
+    fn shuffle_bytes(self, other: Self) -> u8x32 {
+        unsafe { ::bitcast(x86_mm256_shuffle_epi8(::bitcast(self), ::bitcast(other))) }
+    }
+}
