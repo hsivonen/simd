@@ -226,3 +226,8 @@ pub mod x86;
 pub mod arm;
 #[cfg(any(feature = "doc", target_arch = "aarch64"))]
 pub mod aarch64;
+
+pub trait Fma {
+    /// compute `self * b + c`
+    fn mul_add(self, b: Self, c: Self) -> Self;
+}
