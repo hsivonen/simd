@@ -288,3 +288,27 @@ impl AvxI8x16 for i8x16 {}
 
 pub trait AvxBool8ix16 {}
 impl AvxBool8ix16 for bool8ix16 {}
+
+#[cfg(target_feature="fma")]
+pub mod fma {
+    use super::super::super::Fma;
+    use super::*;
+    
+    extern "platform-intrinsic" {
+        fn x86_mm256_fmadd_ps(a: f32x8, b: f32x8, c: f32x8) -> f32x8;
+        fn x86_mm256_fmadd_pd(a: f64x4, b: f64x4, c: f64x4) -> f64x4;
+    }
+
+    impl Fma for f32x8 {
+        fn mul_add(self, b: Self, c: Self) -> Self {
+            unsafe { x86_mm256_fmadd_ps(self, b, c) }
+        }
+    }
+    impl Fma for f64x4 {
+        fn mul_add(self, b: Self, c: Self) -> Self {
+            unsafe { x86_mm256_fmadd_pd(self, b, c) }
+        }
+    }
+}
+
+    

@@ -357,3 +357,24 @@ impl Sse2Bool8ix16 for bool8ix16 {
         unsafe { x86_mm_movemask_epi8(bitcast(self)) as u32}
     }
 }
+
+#[cfg(any(feature = "doc", target_feature = "fma"))]
+pub mod fma {
+    use super::*;
+    use super::super::super::Fma;
+    extern "platform-intrinsic" {
+        fn x86_mm_fmadd_ps(a: f32x4, b: f32x4, c: f32x4) -> f32x4;
+        fn x86_mm_fmadd_pd(a: f64x2, b: f64x2, c: f64x2) -> f64x2;
+    }
+
+    impl Fma for f32x4 {
+        fn mul_add(self, b: Self, c: Self) -> Self {
+            unsafe { x86_mm_fmadd_ps(self, b, c) }
+        }
+    }
+    impl Fma for f64x2 {
+        fn mul_add(self, b: Self, c: Self) -> Self {
+            unsafe { x86_mm_fmadd_pd(self, b, c) }
+        }
+    }
+}
