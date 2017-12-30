@@ -210,8 +210,14 @@ extern "platform-intrinsic" {
     fn simd_xor<T: Simd>(x: T, y: T) -> T;
 }
 #[repr(packed)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Copy)]
 struct Unalign<T>(T);
+
+impl<T: Clone> Clone for Unalign<T> {
+    fn clone(&self) -> Unalign<T> {
+        Unalign(unsafe { self.0.clone() })
+    }
+}
 
 #[macro_use]
 mod common;
