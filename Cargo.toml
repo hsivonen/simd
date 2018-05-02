@@ -3,8 +3,8 @@ name = "simd"
 version = "0.2.1"  #:version
 authors = ["Huon Wilson <dbau.pp+github@gmail.com>"]
 
-repository = "https://github.com/rust-lang-nursery/simd"
-documentation = "https://rust-lang-nursery.github.io/simd/doc/simd"
+repository = "https://github.com/hsivonen/simd"
+documentation = "https://docs.rs/simd/"
 license = "MIT/Apache-2.0"
 keywords = ["simd", "data-parallel"]
 readme = "README.md"
