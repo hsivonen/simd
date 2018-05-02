@@ -12,6 +12,7 @@ readme = "README.md"
 description = """
 `simd` offers limited cross-platform access to SIMD instructions on
 CPUs, as well as raw interfaces to platform-specific instructions.
+(To be obsoleted by the `std::simd` implementation RFC 2366.)
 """
 
 [package.metadata.docs.rs]
