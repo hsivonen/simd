@@ -1,6 +1,8 @@
 # `simd`
 
-[![Build Status](https://travis-ci.org/rust-lang-nursery/simd.png)](https://travis-ci.org/rust-lang-nursery/simd)
+[![Build Status](https://travis-ci.org/hsivonen/simd.svg?branch=master)](https://travis-ci.org/hsivonen/simd)
+[![crates.io](https://meritbadge.herokuapp.com/simd)](https://crates.io/crates/simd)
+[![docs.rs](https://docs.rs/simd/badge.svg)](https://docs.rs/simd/)
 
 `simd` offers a basic interface to the SIMD functionality of CPUs.
 
