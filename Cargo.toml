@@ -1,6 +1,6 @@
 [package]
 name = "simd"
-version = "0.2.3"  #:version
+version = "0.2.4"  #:version
 authors = ["Huon Wilson <dbau.pp+github@gmail.com>"]
 
 repository = "https://github.com/hsivonen/simd"
