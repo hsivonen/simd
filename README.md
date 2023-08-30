@@ -1,8 +1,7 @@
 # `simd`
 
-[![Build Status](https://travis-ci.org/hsivonen/simd.svg?branch=master)](https://travis-ci.org/hsivonen/simd)
-[![crates.io](https://meritbadge.herokuapp.com/simd)](https://crates.io/crates/simd)
-[![docs.rs](https://docs.rs/simd/badge.svg)](https://docs.rs/simd/)
+[![crates.io](https://img.shields.io/crates/v/simd.svg)](https://crates.io/crates/simd)
+[![docs.rs](https://docs.rs/simd/badge.svg)](https://docs.rs/simd)
 
 _This crate no londer builds as of Rust 1.33 nightly_ due to the [removal of compiler features](https://github.com/rust-lang/rust/pull/57416) that this crates depends on. See the [`packed_simd`](https://crates.io/crates/packed_simd) crate instead.
 
