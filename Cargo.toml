@@ -1,6 +1,6 @@
 [package]
 name = "simd"
-version = "0.2.4"  #:version
+version = "0.2.5"  #:version
 authors = ["Huon Wilson <dbau.pp+github@gmail.com>"]
 
 repository = "https://github.com/hsivonen/simd"
@@ -10,9 +10,7 @@ keywords = ["simd", "data-parallel"]
 readme = "README.md"
 
 description = """
-`simd` offers limited cross-platform access to SIMD instructions on
-CPUs, as well as raw interfaces to platform-specific instructions.
-(To be obsoleted by the `std::simd` implementation RFC 2366.)
+OBSOLETE: See `core::simd` instead.
 """
 
 [package.metadata.docs.rs]
@@ -28,3 +26,6 @@ cfg-if = "0.1"
 [features]
 doc = []
 with-serde = ["serde", "serde_derive"]
+
+[badges]
+maintenance = { status = "deprecated" }
